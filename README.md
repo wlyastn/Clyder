@@ -17,64 +17,6 @@ This is a Python-based script designed for analyzing data from Discord servers. 
 
 By using this tool, you agree to comply with Discord's Terms of Service. This tool does not perform any scraping activities; instead, it leverages Discord's official API for data retrieval, respecting all rate limits and usage guidelines. Misuse of this tool, such as using it in ways that violate Discord's Terms of Service (e.g., unauthorized data collection, using self-bots), can result in account termination. The creator of this tool does not endorse or encourage any activities that violate Discord's Terms of Service.
 
-## Installation
-
-### 1. Clone the Repository
-
-#### Using HTTPS
-
-```bash
-git clone https://github.com/wlyastn/Clyder.git
-```
-
-#### Using SSH
-
-```bash
-git clone git@github.com:wlyastn/Clyder.git
-```
-
-#### Using GitHub CLI
-
-```bash
-gh repo clone wlyastn/Clyder
-```
-
-### 2. Navigate to the Project Directory
-
-```bash
-cd Clyder
-```
-
-### 3. Set Up a Virtual Environment (Optional but Recommended)
-
-#### Windows
-
-```cmd
-python -m venv venv
-venv\Scripts\activate
-```
-
-#### macOS/Linux
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-### 4. Install the Required Dependencies
-
-#### Windows
-
-```cmd
-pip install -r requirements.txt
-```
-
-#### macOS/Linux
-
-```bash
-pip3 install -r requirements.txt
-```
-
 ## Usage
 
 ### Step 1: Obtain Your Authorization Token
@@ -107,21 +49,9 @@ Enable "Developer Tools" in your Discord settings, under the "Advanced" tab.
 
 ### Step 4: Run the Tool
 
-#### Windows
-
-```cmd
-python Clyder.py
-```
-
-#### macOS/Linux
-
-```bash
-python3 Clyder.py
-```
-
 Follow the prompts to enter your Discord bot token, server ID, and channel ID.
 
-### 5. Exported Data
+## Exported Data
 
 The tool will save the retrieved messages or keyword search results to a CSV file in the working directory.
 
