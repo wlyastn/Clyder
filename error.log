@@ -1,4 +1,0 @@
-2024-08-22 16:40:23,854 - ERROR - Failed to fetch data from https://discord.com/api/v9/guilds//preview. Status code 401
-2024-08-22 16:40:23,854 - ERROR - Error fetching member count: 401 Client Error: Unauthorized for url: https://discord.com/api/v9/guilds//preview
-2024-08-22 16:40:24,027 - ERROR - Failed to fetch data from https://discord.com/api/v9/guilds//preview. Status code 401
-2024-08-22 16:40:24,027 - ERROR - Error fetching presence count: 401 Client Error: Unauthorized for url: https://discord.com/api/v9/guilds//preview
