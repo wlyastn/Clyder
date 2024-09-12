@@ -75,10 +75,6 @@ The tool will save the retrieved messages or keyword search results to a CSV fil
 
 All operations and errors are logged to a timestamped log file (`error_log_YYYYMMDD_HHMMSS.log`). These logs include timestamps and are useful for debugging or reviewing tool performance.
 
-## Contribution
-
-Contributions are welcome! Please fork the repository and submit a pull request with your improvements or fixes.
-
 ## License
 
 This project is licensed under the [MIT License](./LICENSE).
