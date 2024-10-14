@@ -13,7 +13,6 @@ Clyder is a Python-based script designed for analyzing data from Discord servers
 - **Data Export**: Save the retrieved data as a CSV file for further analysis.
 - **Rate Limit Handling**: Built-in rate limit management to ensure compliance with Discord API limits.
 - **Robust Date Handling**: Validates and handles date inputs with timezone awareness.
-- **Real-Time Feedback**: Displays a real-time count of messages being gathered with a simple spinner animation.
 - **Exit**: Users can quit the program at any time by pressing `Ctrl+C`.
 
 ## Disclaimer
