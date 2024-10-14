@@ -1,4 +1,4 @@
-#Written by wlyastn Aug 26, 2024
+# Written by wlyastn Aug 26, 2024
 import time
 import requests
 import pandas as pd

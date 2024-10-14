@@ -6,7 +6,7 @@ Clyder is a Python-based script designed for analyzing data from Discord servers
 
 **Important**: You can only use this tool on servers you own. This tool supports using a bot token or your personal authorization token.
 
-## Features
+## Using the Tool
 
 - **Fetch Messages**: Retrieve all messages from a specified Discord channel within an optional date range.
 - **Keyword Search**: Search for specific keywords within the messages of a Discord channel.
@@ -14,7 +14,7 @@ Clyder is a Python-based script designed for analyzing data from Discord servers
 - **Rate Limit Handling**: Built-in rate limit management to ensure compliance with Discord API limits.
 - **Robust Date Handling**: Validates and handles date inputs with timezone awareness.
 - **Real-Time Feedback**: Displays a real-time count of messages being gathered with a simple spinner animation.
-- **Graceful Exit**: Users can quit the program at any time by pressing `Ctrl+C`.
+- **Exit**: Users can quit the program at any time by pressing `Ctrl+C`.
 
 ## Disclaimer
 
@@ -73,7 +73,7 @@ The tool will save the retrieved messages or keyword search results to a CSV fil
 
 ## Logging
 
-All operations and errors are logged to a timestamped log file (`error_log_YYYYMMDD_HHMMSS.log`). These logs include timestamps and are useful for debugging or reviewing tool performance.
+All operations and errors are logged to a timestamped log file (`error_log_YYYYMMDD_HHMMSS.log`).
 
 ## License
 
