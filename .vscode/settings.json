@@ -1,0 +1,5 @@
+{
+    "editor.suggest.showStatusBar": true,
+    "workbench.sideBar.location": "right",
+    "workbench.activityBar.location": "top"
+}
