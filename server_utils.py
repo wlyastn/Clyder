@@ -4,8 +4,8 @@ import time
 
 def rate_limited_request(url, headers, retries=5):
     """
-    Makes a GET request with a rate limit handler.
-    Retries if rate-limited or on transient errors.
+    Makes a GET request with a rate limit handler
+    Retries if rate-limited or on transient errors
     """
     for _ in range(retries):
         r = requests.get(url, headers=headers)

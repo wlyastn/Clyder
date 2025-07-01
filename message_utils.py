@@ -7,7 +7,7 @@ from datetime import timezone
 
 def fetch_messages(channel_id, headers, start_date=None, end_date=None):
     """
-    Fetches messages, optionally filtered by date range.
+    Fetches messages, optionally filtered by date range
     """
     last_message_id = None
     while True:
@@ -41,9 +41,12 @@ def filter_messages_by_date(messages, start_date, end_date):
     out = []
     for m in messages:
         ts = dateutil_parse(m['timestamp']).astimezone(timezone.utc)
+        print(f"Message timestamp: {ts}, Start date: {start_date}, End date: {end_date}")
         if start_date and ts < start_date:
-            break
+            print(f"Skipping message {m['id']} because it is before the start date.")
+            continue
         if end_date and ts > end_date:
+            print(f"Skipping message {m['id']} because it is after the end date.")
             continue
         out.append(m)
     return out
@@ -58,7 +61,7 @@ def is_message_within_date_range(ts_str, start_date=None, end_date=None):
 
 def save_to_csv(messages, filename):
     """
-    Saves messages to a CSV file.
+    Saves messages to a CSV file
     """
     if not messages:
         print("No messages to save.")
