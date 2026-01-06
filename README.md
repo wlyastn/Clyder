@@ -20,37 +20,63 @@ By using this tool, you agree to comply with Discord's Terms of Service. This to
 
 ## Usage
 
-### Step 1: Obtain Your Authorization Token
+To use Clyder, you'll need to enable Developer Mode in Discord and gather your authorization token, server ID, and channel ID. Follow the steps below:
 
-1. Open your Discord account and enable "Developer Tools" in a Chromium-based browser.
-2. Select the "Network" tab.
-3. Engage in activity, like clicking around in channels and servers.
-4. In the left-hand search box, enter the following text:
+![Developer Mode in Discord](images/discorddevelopermode.png)
 
-    ```bash
+### Step 1: Enable Developer Mode in Discord
+
+1. Open Discord and go to **User Settings** (gear icon in the bottom-left).
+2. Navigate to **Advanced** tab.
+3. Enable **Developer Mode**.
+4. Close settings.
+
+### Step 2: Obtain Your Authorization Token
+
+1. Open your Discord server in a **Chromium-based browser** (Chrome, Edge, Brave, etc.).
+2. Press `F12` to open **Developer Tools**.
+3. Go to the **Network** tab.
+4. Interact with Discord (scroll through channels, send a message, etc.).
+5. In the Network tab's search/filter box, search for:
+
+    ```
     messages?limit=50
     ```
 
-5. Click on the found text and scroll down until you see "Authorization" under "Request Headers". It should look like this:
+6. Click on the result that appears.
+7. Scroll down to **Request Headers** and find the **Authorization** header. It will look like:
 
-    ```makefile
+    ```
     Authorization: Tl4gh9sd...
     ```
 
-    This is your "Auth. Token".
+    Copy the entire value after "Authorization: ". This is your **Auth Token**.
 
-### Step 2: Enable Developer Tools in Discord
+![Finding your authorization token](images/messageslimit.png)
 
-Enable "Developer Tools" in your Discord settings, under the "Advanced" tab.
+### Step 3: Obtain Your Server ID
 
-### Step 3: Obtain Server and Channel IDs
+1. In Discord, right-click on your **server name/icon** (on the left sidebar).
+2. Select **"Copy Server ID"** from the context menu.
 
-- Right-click on the server icon for the "Server ID".
-- Right-click on the channel for the "Channel ID".
+![Getting your server ID](images/serverid.png)
 
-### Step 4: Run the Tool
+### Step 4: Obtain Your Channel ID
 
-1. Clone the repository and navigate to the project directory.
+1. In Discord, right-click on the **channel name** you want to analyze.
+2. Select **"Copy Channel ID"** from the context menu.
+
+![Getting your channel ID](images/channelid.png)
+
+### Step 5: Run the Tool
+
+1. Clone the repository and navigate to the project directory:
+
+    ```bash
+    git clone <repository-url>
+    cd Clyder
+    ```
+
 2. Install the required Python dependencies:
 
     ```bash
@@ -63,7 +89,13 @@ Enable "Developer Tools" in your Discord settings, under the "Advanced" tab.
     python Clyder.py
     ```
 
-4. Follow the prompts to enter your Discord bot token, server ID, and channel ID.
+4. Follow the interactive prompts:
+   - Enter your Discord bot token
+   - Enter your server ID
+   - Enter your channel ID
+   - Choose to fetch all messages (a) or keyword search (k)
+   - Optionally filter by date range
+   - If doing keyword search, enter comma-separated keywords
 
 ## Exported Data
 

@@ -41,12 +41,9 @@ def filter_messages_by_date(messages, start_date, end_date):
     out = []
     for m in messages:
         ts = dateutil_parse(m['timestamp']).astimezone(timezone.utc)
-        print(f"Message timestamp: {ts}, Start date: {start_date}, End date: {end_date}")
         if start_date and ts < start_date:
-            print(f"Skipping message {m['id']} because it is before the start date.")
             continue
         if end_date and ts > end_date:
-            print(f"Skipping message {m['id']} because it is after the end date.")
             continue
         out.append(m)
     return out

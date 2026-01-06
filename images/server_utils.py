@@ -21,9 +21,6 @@ def rate_limited_request(url, headers, retries=5):
     raise Exception(f"Failed to fetch data from {url} after {retries} retries")
 
 def get_server_name(server_id, headers):
-    """
-    Fetches the name of a Discord server
-    """
     try:
         url = f"https://discord.com/api/v9/guilds/{server_id}"
         r = rate_limited_request(url, headers)
@@ -33,9 +30,6 @@ def get_server_name(server_id, headers):
         return None
 
 def get_channel_name(channel_id, headers):
-    """
-    Fetches the name of a Discord channel
-    """
     try:
         url = f"https://discord.com/api/v9/channels/{channel_id}"
         r = rate_limited_request(url, headers)
@@ -45,9 +39,6 @@ def get_channel_name(channel_id, headers):
         return None
 
 def get_approximate_member_count(server_id, headers):
-    """
-    Fetches the approximate member count of a Discord server
-    """
     try:
         url = f'https://discord.com/api/v9/guilds/{server_id}/preview'
         r = rate_limited_request(url, headers)
@@ -57,9 +48,6 @@ def get_approximate_member_count(server_id, headers):
         return 'Error'
 
 def get_approximate_presence_count(server_id, headers):
-    """
-    Fetches the approximate online presence count of a Discord server
-    """
     try:
         url = f'https://discord.com/api/v9/guilds/{server_id}/preview'
         r = rate_limited_request(url, headers)

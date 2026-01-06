@@ -18,10 +18,17 @@ Use this at your own risk.
 """
 
 def clear_console():
+    """
+    Clears the console and displays the disclaimer message
+    """
     os.system('cls' if os.name == 'nt' else 'clear')
     print(DISCLAIMER)
 
 def parse_date_input(date_input):
+    """
+    Parses user date input and returns a UTC datetime object.
+    Returns None if input is empty or invalid.
+    """
     date_input = date_input.strip()
     if not date_input:
         return None
@@ -36,6 +43,10 @@ def parse_date_input(date_input):
         return None
 
 def main():
+    """
+    Main application loop. Prompts user for Discord credentials and fetches messages
+    from a specified channel, with optional filtering by keywords or date range.
+    """
     while True:
         clear_console()
         bot_token = input("Enter your Discord bot authorization token: ").strip()
