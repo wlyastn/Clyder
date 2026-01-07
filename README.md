@@ -1,18 +1,16 @@
 # Clyder: A Discord Data Analysis Tool
 
-## Overview
+I built Clyder to pull and analyze message history from Discord channels without having to manually export or use third-party services. It's useful for keyword searches across time, archival, or understanding conversation trends in a server.
 
-Clyder is a Python-based script designed for analyzing data from Discord servers. It allows users to retrieve messages from specified channels within a server and perform keyword-based searches on those messages. This tool is intended for data analysis purposes and **is not a scraper**. It is built to comply with Discord's Terms of Service, and users should ensure they have the appropriate permissions to access the data they are analyzing.
+**Important**: Use this only on servers where you have permission to access the data.
 
-**Important**: You can only use this tool on servers you own. This tool supports using a bot token or your personal authorization token.
+## What It Does
 
-## Using the Tool
-
-- **Fetch Messages**: Retrieve all messages from a specified Discord channel within an optional date range.
-- **Keyword Search**: Search for specific keywords within the messages of a Discord channel.
-- **Data Export**: Save the retrieved data as a CSV file for further analysis.
-- **Rate Limit Handling**: Built-in rate limit management to ensure compliance with Discord API limits.
-- **Robust Date Handling**: Validates and handles date inputs with timezone awareness.
+- **Fetch Messages**: Pull all messages from a channel, optionally filtered by date range
+- **Keyword Search**: Find messages containing specific keywords
+- **Export to CSV**: Save results with message ID, timestamp, author, content, and more
+- **Flexible Date Handling**: Accepts YYYY-MM-DD format, converts to UTC automatically
+- **Rate Limit Aware**: Built-in delays to respect Discord API limits
 
 ## Disclaimer
 
@@ -99,7 +97,20 @@ To use Clyder, you'll need to enable Developer Mode in Discord and gather your a
 
 ## Exported Data
 
-The tool will save the retrieved messages or keyword search results to a CSV file in the working directory.
+The tool saves results as CSV with these columns:
+
+```
+message_id,timestamp,author_id,author_name,content,channel_id,guild_id,attachments
+123456789,2025-01-07T14:23:01.000000+00:00,987654321,alice,\"yo this is cool\",555,666,
+123456790,2025-01-07T14:25:15.000000+00:00,111111111,bob,\"totally agree\",555,666,https://cdn.discord.com/attachments/...
+```
+
+## Known Quirks
+
+- Large channels (10k+ messages) can take a while—Discord rate limits kick in, but we respect that
+- Deleted messages are gone for good (Discord API doesn't return them)
+- Embeds and reactions aren't included, just the raw message text
+- If a user deletes their account, their author_name shows as "Deleted User" but author_id is preserved
 
 ## License
 
